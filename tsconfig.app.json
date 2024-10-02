@@ -2,10 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": [
-      "jquery",
-      "node",
-      "../ids-enterprise-typings"
+    "typeRoots": [
+      "node_modules/@types"
     ]
   },
   "files": [
