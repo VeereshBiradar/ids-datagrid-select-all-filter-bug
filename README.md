@@ -12,7 +12,17 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Install
 
-Run `npm i` to build this project. The dependencis will be stored in the `node_modules/` directory.
+Run `npm i` to build this project. The dependencies will be stored in the `node_modules/` directory.
+
+## Installation Of Types
+
+Option 1. Install the types globally by adding this to the top of your project’s `app.component.ts`
+
+```sh
+/// <reference types="ids-enterprise-typings" />
+```
+
+Option 2. Install the types using typeRoots and then adding the types to your `tsconfig.json` for example https://oxford.awsdev.infor.com/infor-design/enterprise-ng-quickstart/-/blob/main/tsconfig.json?ref_type=heads#L16-21
 
 ## Build
 

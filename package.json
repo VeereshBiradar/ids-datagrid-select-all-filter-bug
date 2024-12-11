@@ -21,9 +21,9 @@
     "@angular/router": "18.2.11",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.10",
-    "ids-enterprise-ng": "18.6.5",
-    "ids-enterprise-typings": "18.6.5",
-    "ids-enterprise-wc": "1.7.0",
+    "ids-enterprise-ng": "18.8.0",
+    "ids-enterprise-typings": "18.8.0",
+    "ids-enterprise-wc": "1.8.0",
     "d3": "^7.9.0"
   },
   "devDependencies": {

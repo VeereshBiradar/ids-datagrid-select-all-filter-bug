@@ -1,3 +1,5 @@
+/// <reference types="ids-enterprise-typings" />
+
 import {
   Component,
   HostBinding,
