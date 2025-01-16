@@ -13,14 +13,13 @@ import 'ids-enterprise-wc/components/ids-text/ids-text';
 import {
   SohoPersonalizeDirective,
   SohoRenderLoopService,
-  SohoApplicationMenuComponent,
-  SohoAccordionComponent,
-  SohoSearchFieldComponent,
   SohoModuleNavContainerComponent,
   SohoModuleNavSwitcherComponent,
-  SohoModuleNavSettingsComponent,
-  SohoModuleNavComponent
+  SohoModuleNavComponent,
+  SohoComponentsModule
 } from 'ids-enterprise-ng';
+import { HeaderComponent } from './header/header.component';
+import { CommonModule } from '@angular/common';
 
 const defaultRoles: Array<SohoModuleNavSwitcherRoleRecord> = [
   { text: 'Admin', value: 'admin', icon: 'app-ac' },
@@ -33,6 +32,7 @@ const defaultRoles: Array<SohoModuleNavSwitcherRoleRecord> = [
 ];
 
 @Component({
+  imports: [ HeaderComponent, SohoComponentsModule, CommonModule ],
   selector: 'body', // eslint-disable-line
   templateUrl: 'app.component.html',
   styleUrls: ['./app.component.css'],

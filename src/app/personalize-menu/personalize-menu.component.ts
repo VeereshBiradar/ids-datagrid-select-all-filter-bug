@@ -4,7 +4,7 @@ import {
   OnInit,
   HostBinding
 } from '@angular/core';
-import { SohoPersonalizeDirective } from 'ids-enterprise-ng';
+import { SohoComponentsModule, SohoPersonalizeDirective } from 'ids-enterprise-ng';
 
 interface ThemeMenuItem extends SohoTheme {
   selected?: boolean;
@@ -16,7 +16,8 @@ interface ColorMenuItem extends SohoPersonalizationColor {
 
 @Component({
   selector: 'app-personalize-menu',
-  templateUrl: 'personalize-menu.component.html'
+  templateUrl: 'personalize-menu.component.html',
+  imports: [SohoComponentsModule]
 })
 export class PersonalizeMenuComponent implements OnInit {
   /**
