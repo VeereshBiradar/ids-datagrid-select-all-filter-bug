@@ -15,12 +15,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ids-enterprise-ng-quickstart",
+            "outputPath": {
+              "base": "dist/ids-enterprise-ng-quickstart"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -53,7 +56,8 @@
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/d3/dist/d3.js",
               "./node_modules/ids-enterprise/dist/js/sohoxi.js"
-            ]
+            ],
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -78,9 +82,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -134,7 +136,7 @@
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/d3/dist/d3.js",
-              "./node_modules/ids-enterprise/dist/js/sohoxi.js",
+              "./node_modules/ids-enterprise/dist/js/sohoxi.js"
             ]
           }
         },
@@ -162,7 +164,5 @@
       }
     }
   },
-  "cli": {
-    "analytics": "fb234f71-2f18-4d9a-a82d-1e9f0d12493d"
-  }
+  "cli": {}
 }

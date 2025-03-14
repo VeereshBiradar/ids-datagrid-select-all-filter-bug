@@ -1,8 +1,10 @@
 import { Component, EventEmitter, HostBinding, OnInit, Output, ViewChild } from '@angular/core';
-import { SohoModuleNavComponent } from 'ids-enterprise-ng';
+import { SohoComponentsModule, SohoModuleNavComponent } from 'ids-enterprise-ng';
+import { PersonalizeMenuComponent } from '../personalize-menu/personalize-menu.component';
 
 @Component({
   selector: 'app-header',
+  imports: [PersonalizeMenuComponent, SohoComponentsModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
