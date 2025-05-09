@@ -4,8 +4,8 @@ stages:
 build:
   stage: build
   tags:
-    - dsa
-    - DIND
+    - k8s
+    - hookandloop-c5
   image: node:20
   script:
     - npm ci
