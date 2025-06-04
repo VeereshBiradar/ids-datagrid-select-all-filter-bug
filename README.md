@@ -22,7 +22,7 @@ Option 1. Install the types globally by adding this to the top of your projectâ€
 /// <reference types="ids-enterprise-typings" />
 ```
 
-Option 2. Install the types using typeRoots and then adding the types to your `tsconfig.json` for example https://oxford.awsdev.infor.com/infor-design/enterprise-ng-quickstart/-/blob/main/tsconfig.json?ref_type=heads#L16-21
+Option 2. Install the types using typeRoots and then adding the types to your `tsconfig.json` for example https://oxford.awsdev.infor.com/infor-design/enterprise-ng-quickstart/-/blob/development/tsconfig.json?ref_type=heads#L16-21
 
 ## Build
 
