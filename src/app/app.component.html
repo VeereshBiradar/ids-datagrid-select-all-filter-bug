@@ -1,10 +1,18 @@
 <a href="#maincontent" class="skip-link" data-translate="text">SkipToMain</a>
 
-<soho-icons *ngIf="!useNewIcons"></soho-icons>
-<soho-icons-new *ngIf="useNewIcons"></soho-icons-new>
+@if (!useNewIcons) {
+  <soho-icons></soho-icons>
+}
+@if (useNewIcons) {
+  <soho-icons-new></soho-icons-new>
+}
 
-<soho-icons-empty *ngIf="!useNewIcons"></soho-icons-empty>
-<soho-icons-empty-new *ngIf="useNewIcons"></soho-icons-empty-new>
+@if (!useNewIcons) {
+  <soho-icons-empty></soho-icons-empty>
+}
+@if (useNewIcons) {
+  <soho-icons-empty-new></soho-icons-empty-new>
+}
 
 <soho-module-nav-container #moduleNavContainer [ngClass]="{ 'module-nav-container': true }">
   <soho-module-nav #moduleNav [ngClass]="{ 'module-nav': true }"
@@ -152,20 +160,20 @@
     <app-header #appHeader (hamburgerClick)="toggleModuleNavDisplayMode($event)"></app-header>
 
     <!-- <div soho-tag-list (afterRemove)="afterRemove($event)">
-      <span soho-tag>#Tagged</span>
-      <span soho-tag="secondary">#Tagged</span>
-      <span soho-tag="error"><span class="audible">Error</span>Delayed</span>
-      <span soho-tag="good">Open Order</span>
-      <span soho-tag="alert"><span class="audible">Alert</span>Help Order</span>
-      <span soho-tag="info">Information Tag</span>
-      <a href="#" soho-tag [isClickable]="true" (click)="onClick($event)">#Clickable</a>
-      <a href="#" soho-tag [isDismissible]="true">#Dismissible</a>
-    </div>
-
-    <div soho-tag-list>
-      <button soho-button="primary">Button label</button>
-      <button soho-button="tertiary" icon="filter">Button label</button>
-    </div> -->
+    <span soho-tag>#Tagged</span>
+    <span soho-tag="secondary">#Tagged</span>
+    <span soho-tag="error"><span class="audible">Error</span>Delayed</span>
+    <span soho-tag="good">Open Order</span>
+    <span soho-tag="alert"><span class="audible">Alert</span>Help Order</span>
+    <span soho-tag="info">Information Tag</span>
+    <a href="#" soho-tag [isClickable]="true" (click)="onClick($event)">#Clickable</a>
+    <a href="#" soho-tag [isDismissible]="true">#Dismissible</a>
   </div>
+
+  <div soho-tag-list>
+    <button soho-button="primary">Button label</button>
+    <button soho-button="tertiary" icon="filter">Button label</button>
+  </div> -->
+</div>
 </soho-module-nav-container>
 <div soho-personalize (changetheme)="onChangeTheme($event)"></div>
