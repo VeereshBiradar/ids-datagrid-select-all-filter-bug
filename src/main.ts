@@ -1,4 +1,4 @@
-import { enableProdMode, LOCALE_ID, importProvidersFrom } from '@angular/core';
+import { enableProdMode, LOCALE_ID, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 
@@ -14,7 +14,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, SohoLocaleModule, SohoButtonModule, SohoLocaleInitializerModule, SohoComponentsModule),
+        provideZoneChangeDetection(),importProvidersFrom(BrowserModule, SohoLocaleModule, SohoButtonModule, SohoLocaleInitializerModule, SohoComponentsModule),
         {
             provide: LOCALE_ID,
             useValue: 'en-US'
