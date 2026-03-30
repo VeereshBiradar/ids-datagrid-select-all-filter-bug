@@ -1,0 +1,59 @@
+<div class="datagrid-demo-container">
+    <h2>Soho DataGrid — "Select All" Bug on Filtered Data</h2>
+
+    <div class="bug-info">
+        <p><strong>Bug:</strong> When rows are filtered, clicking the header "Select All" checkbox selects ALL rows in
+            the dataset (including hidden/filtered-out rows), not just the visible filtered rows.</p>
+        <p><strong>Expected:</strong> Only visible/filtered rows should be selected.</p>
+    </div>
+
+    <!-- Status bar showing the bug -->
+    <div class="status-bar">
+        <span class="status-item">Visible Rows: <strong>{{ visibleCount }}</strong></span>
+        <span class="status-item">Total Rows: <strong>{{ totalCount }}</strong></span>
+        <span class="status-item selection-count" [class.bug-highlight]="selectionCount > visibleCount">
+            Selected: <strong>{{ selectionCount }}</strong>
+            <span *ngIf="selectionCount > visibleCount" class="bug-tag">⚠ BUG — selected more than visible rows!</span>
+        </span>
+    </div>
+
+    <div soho-busyindicator [blockUI]="true" [activated]="isBusy">
+        <div class="row full-width">
+            <div class="twelve columns">
+
+                <div class="toolbar">
+                    <div class="title">
+                        <div soho-selection-count><span class="datagrid-result-count"></span></div>
+                    </div>
+                    <soho-toolbar-button-set>
+                        <button soho-button="tertiary" icon="filter" (click)="onFilterClick()">
+                            <span>Filter</span>
+                        </button>
+                        <div class="separator"></div>
+                        <button soho-button="tertiary" icon="close" (click)="onClearAllFilters()"
+                            *ngIf="filterExpression.length > 0">
+                            <span>Clear Filters</span>
+                        </button>
+                        <div class="separator" *ngIf="filterExpression.length > 0"></div>
+                        <button soho-button="tertiary" icon="refresh" data-action="refresh" (click)="refresh()">
+                        </button>
+                    </soho-toolbar-button-set>
+                </div>
+
+                <div class="contextual-toolbar toolbar is-hidden">
+                    <div soho-selection-count>{{ selectionCount }} Selected</div>
+                    <div class="buttonset">
+                        <button soho-button="tertiary" icon="close" (click)="onClearSelection()">
+                            <span>Clear Selection</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div soho-datagrid id="demo-bug-grid" *ngIf="datagridOptions" [gridOptions]="datagridOptions"
+                    (selected)="onSelect($event.rows)">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

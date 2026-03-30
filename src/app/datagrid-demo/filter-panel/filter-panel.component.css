@@ -1,0 +1,18 @@
+.filter-panel-content {
+  padding: 10px 0;
+}
+
+.filter-field {
+  margin-bottom: 14px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.filter-operator {
+  width: 80px;
+  min-width: 80px;
+}

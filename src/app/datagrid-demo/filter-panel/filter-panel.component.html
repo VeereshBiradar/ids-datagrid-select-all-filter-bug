@@ -1,0 +1,18 @@
+<div class="filter-panel-content">
+  <div *ngFor="let col of filterableColumns" class="filter-field">
+    <div class="field">
+      <label [attr.for]="'filter-' + col.id">{{ col.name }}</label>
+      <div class="filter-row">
+        <select class="filter-operator" [(ngModel)]="filterValues[col.id!].operator">
+          <option value="contains">[A] Contains</option>
+          <option value="equals">[=] Equals</option>
+          <option value="does-not-equal">[≠] Does Not Equal</option>
+        </select>
+        <input soho-input
+          [attr.id]="'filter-' + col.id"
+          [(ngModel)]="filterValues[col.id!].value"
+          placeholder="" />
+      </div>
+    </div>
+  </div>
+</div>
