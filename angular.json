@@ -160,6 +160,9 @@
               "devServerTarget": "ids-enterprise-ng-quickstart:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
