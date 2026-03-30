@@ -1,0 +1,12 @@
+stages:
+  - build
+
+build:
+  stage: build
+  tags:
+    - k8s
+    - hookandloop-c5
+  image: node:20
+  script:
+    - npm ci
+    - npm run build
